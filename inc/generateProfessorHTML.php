@@ -21,8 +21,7 @@ function generateProfessorHTML($id){
                 <?php 
                 $relatedPrograms = get_field('related_programs');
                 if($relatedPrograms){ ?>
-
-                    <p>Name is mentioned: 
+                    <p><?php echo esc_html(get_the_title()) ?> is mentioned in: 
                         <?php foreach($relatedPrograms as $key => $program) {
                             echo get_the_title($program);
                             if($key != array_key_last($relatedPrograms) && count($relatedPrograms > 1)) {
